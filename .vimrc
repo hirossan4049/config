@@ -7,9 +7,15 @@ colorscheme onedark
 inoremap <silent> jj <ESC>
 
 " tab color
-hi TabLineFill ctermfg=LightGreen ctermbg=Gray
-hi TabLine ctermfg=Black ctermbg=Gray
-hi TabLineSel ctermfg=Black ctermbg=Yellow
+"hi TabLineFill ctermfg=LightGreen ctermbg=Gray
+"hi TabLine ctermfg=Black ctermbg=Gray
+"hi TabLineSel ctermfg=Black ctermbg=Yellow
+"hi Title ctermfg=LightBlue ctermbg=Magenta
+
+" :so $VIMRUNTIME/syntax/colortest.vim
+hi TabLineFill ctermfg=darkgray ctermbg=black
+hi TabLine ctermfg=darkgray ctermbg=Black
+hi TabLineSel ctermfg=White ctermbg=None
 hi Title ctermfg=LightBlue ctermbg=Magenta
 
 
