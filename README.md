@@ -1,4 +1,4 @@
-# Hirossan4049's MacOS setup
+# My MacOS setup
 
 ### brew
 ```
