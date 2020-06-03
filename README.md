@@ -17,12 +17,20 @@ $ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh 
 
 ### onedark
 ```
+$ bash ./onedark_install.sh
+```
+
+or 
+
+
+```
 $ git clone https://github.com/joshdick/onedark.vim
 ```
 ```
 $ mv onedark.vim/colors ~/.vim/
 $ mkdir ~/.vim/autoload
 $ mv onedark.vim/autoload/onedark.vim ~/.vim/autoload
+$ rm -rf onedark.vim
 ```
 
 
