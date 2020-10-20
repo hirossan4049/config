@@ -1,8 +1,9 @@
 echo Install Onedark theme Start!
 git clone https://github.com/joshdick/onedark.vim
 
-mv onedark.vim/colors ~/.vim/
-mkdir ~/.vim/autoload
+mkdir -p .vim/colors
+mv onedark.vim/colors ~/.vim/colors
+mkdir -p ~/.vim/autoload
 mv onedark.vim/autoload/onedark.vim ~/.vim/autoload
 
 echo Done!
