@@ -20,6 +20,7 @@ $ sh ./install.sh
     * cask "google-japanese-ime" 
 * oh-my-zsh
 * one-dark-theme
+* dock speed fix
 
 
 ## Linux
