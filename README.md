@@ -12,7 +12,6 @@ $ sh ./install.sh
     * brew "vim"
     * brew "wget"
     * brew "htop"
-
     * cask "eloston-chromium"
     * cask "rectangle"
     * cask "vlc"
