@@ -2,11 +2,15 @@ cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
 
 if [`uname` = "Darwin"]; then
+    echo set defaults
     defaults write com.apple.dock autohide-time-modifier -float 0.2;killall Dock
     defaults write com.apple.iphonesimulator ShowSingleTouches 1
     defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+    echo install homebrew
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    echo installed homebrew
     brew bundle
+    echo done brew bundle
 
 
 elif [ `uname` = "Linux" ]; then
