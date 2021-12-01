@@ -6,6 +6,7 @@ if [`uname` = "Darwin"]; then
     defaults write com.apple.dock autohide-time-modifier -float 0.2;killall Dock
     defaults write com.apple.iphonesimulator ShowSingleTouches 1
     defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+    defaults write com.apple.dock "show-recents" -bool "false" && killall Dock
     echo install homebrew
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     echo installed homebrew
