@@ -12,15 +12,13 @@ $ sh ./install.sh
     * brew "vim"
     * brew "wget"
     * brew "htop"
-    * cask "eloston-chromium"
     * cask "rectangle"
     * cask "vlc"
-    * cask "findergo"
     * cask "iterm2"
     * cask "google-japanese-ime" 
 * oh-my-zsh
 * one-dark-theme
-* dock speed fix
+* dock表示、非表示スピード0.2秒にする
 
 
 ## Linux
@@ -32,3 +30,7 @@ $ sh ./install.sh
     * zsh
 * oh-my-zsh
 * one-dark-theme
+
+## Themes
+- zsh
+   - daveverwer
