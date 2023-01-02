@@ -6,18 +6,10 @@ colorscheme onedark
 
 inoremap <silent> jj <ESC>
 
-" tab color
-"hi TabLineFill ctermfg=LightGreen ctermbg=Gray
-"hi TabLine ctermfg=Black ctermbg=Gray
-"hi TabLineSel ctermfg=Black ctermbg=Yellow
-"hi Title ctermfg=LightBlue ctermbg=Magenta
-
-" :so $VIMRUNTIME/syntax/colortest.vim
 hi TabLineFill ctermfg=darkgray ctermbg=black
 hi TabLine ctermfg=darkgray ctermbg=Black
 hi TabLineSel ctermfg=White ctermbg=None
 hi Title ctermfg=LightBlue ctermbg=Magenta
-
 
 set nows
 set number
@@ -85,19 +77,33 @@ nnoremap k gk
 " TABにて対応ペアにジャンプ
 nnoremap <Tab> %
 vnoremap <Tab> %
+" 字下げ字上げ時勝手にビジュアルモード解除しない設定
+vnoremap > >gv
+vnoremap < <gv
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" PPで前回ヤンクした内容を復活する
+noremap PP "0p
+
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-e> <End>
+
 
 " タブ系
 nnoremap <C-t> :tabnew<Space>
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+nnoremap d "_d
+xnoremap d "_d
+xnoremap p "_dP
 
-" まうth操作
+" マウス操作
 set mouse=a
 set ttymouse=xterm2
 "set foldcolumn=3
@@ -115,3 +121,65 @@ if has("autocmd")
         autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
     endif
 endif
+
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Plugin 'terryma/vim-smooth-scroll'
+
+
+" Tabnine. 重いのでやめた
+" Plugin 'zxqfl/tabnine-vim'
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Vlang syntax Highlight
+Plug 'ollykel/v-vim'
+
+" Initialize plugin system
+call plug#end()
