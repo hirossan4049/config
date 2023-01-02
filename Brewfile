@@ -5,10 +5,10 @@ brew "vim"
 brew "wget"
 brew "htop"
 
-cask "eloston-chromium"
 cask "rectangle"
 cask "vlc"
-cask "findergo"
 cask "iterm2"
 cask "google-japanese-ime"
-
+cask "firefox"
+cask "vscodium"
+cask "xcodes"
