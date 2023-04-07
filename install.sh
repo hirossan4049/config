@@ -16,6 +16,9 @@ if [`uname` = "Darwin"]; then
 
 elif [ `uname` = "Linux" ]; then
     sudo apt install vim tmux git zsh
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 mkdir -p ~/fun
