@@ -1,0 +1,272 @@
+/*
+  Obsidian PDF Export Custom CSS
+  v2.1
+*/
+
+:root{
+  --c-text:#111;
+  --c-muted:#333;
+  --c-subtle:#555;
+  --c-border:#ccc;
+  --c-border-strong:#333;
+  --c-bg:#fff;
+  --c-quote-bg:#f5f5f5;
+
+  --ff-serif:"Yu Mincho","Hiragino Mincho ProN","MS Mincho",serif;
+  --ff-mono:"Jetbrains Mono NL",monospace;
+
+  --lh:1.7;
+  --pad-x:1.5cm;
+
+  --h1:2em;
+  --h2:1.6em;
+  --h3:1.4em;
+  --h4:1.2em;
+  --h5:1.1em;
+  --h6:1em;
+}
+
+@media print{
+  body{
+    font-family:var(--ff-serif);
+    color:var(--c-text);
+    line-height:var(--lh);
+    background:var(--c-bg);
+    orphans:2;
+    widows:2;
+  }
+
+  a::after{
+    content:" [" attr(href) "]";
+    font-size:.8em;
+    color:var(--c-subtle);
+  }
+  a.internal-link::after{
+    content:"";
+  }
+
+  .markdown-preview-view .mermaid{
+    overflow-x:visible !important;
+  }
+  .markdown-preview-view .mermaid svg{
+    height:auto !important;
+    overflow:visible !important;
+  }
+}
+
+/* Preview base */
+.markdown-preview-view{
+  margin:0;
+  padding:0 var(--pad-x);
+  max-width:100%;
+  box-sizing:border-box;
+  background:var(--c-bg);
+}
+
+/* Headings */
+.markdown-preview-view h1{
+  font-size:var(--h1);
+  font-weight:700;
+  margin:0 0 1.5em 0;
+  padding-bottom:.5em;
+  border-bottom:2px solid #000;
+  break-before:page;
+  break-after:avoid;
+}
+@media print{
+  .markdown-preview-view h1:first-of-type{
+    break-before:auto;
+  }
+}
+
+.markdown-preview-view h2{
+  font-size:var(--h2);
+  font-weight:700;
+  margin:2em 0 1em 0;
+  padding-bottom:.4em;
+  border-bottom:1px solid var(--c-border-strong);
+}
+
+.markdown-preview-view h3{
+  font-size:var(--h3);
+  font-weight:600;
+  margin:1.5em 0 .8em 0;
+  padding-left:.6em;
+  border-left:4px solid #000;
+  break-after:avoid;
+}
+
+.markdown-preview-view h4{
+  font-size:var(--h4);
+  font-weight:600;
+  margin:1.2em 0 .6em 0;
+  padding-left:.6em;
+  border-left:3px solid #777;
+}
+
+.markdown-preview-view h5{
+  font-size:var(--h5);
+  font-weight:600;
+  margin:1em 0 .5em 0;
+}
+
+.markdown-preview-view h6{
+  font-size:var(--h6);
+  font-weight:600;
+  margin:1em 0 .5em 0;
+  color:var(--c-muted);
+}
+
+/* Paragraphs / Lists */
+.markdown-preview-view p{
+  margin:0 0 .8em 0;
+  letter-spacing:.05em;
+}
+
+.markdown-preview-view ul,
+.markdown-preview-view ol{
+  margin:.8em 0 .8em 1.5em;
+  padding:0;
+}
+
+/* Blockquote */
+.markdown-preview-view blockquote{
+  background:var(--c-quote-bg);
+  border-left:4px solid var(--c-border);
+  margin:1em 0;
+  padding:.8em 1.2em;
+  color:var(--c-muted);
+}
+
+/* Code */
+.markdown-preview-view code{
+  background:#f0f0f0;
+  color:#403f53;
+  padding:.2em .4em;
+  font-size:.95em;
+  border-radius:3px;
+  font-family:var(--ff-mono);
+}
+
+.markdown-preview-view pre[class*="language-"]{
+  background:#fbfbfb;
+  color:#403f53;
+  border:1px solid #d9d9d9;
+  padding:1em;
+  border-radius:4px;
+  overflow-x:auto;
+  font-size:.9em;
+  font-family:var(--ff-mono);
+}
+
+.markdown-preview-view code[class*="language-"]{
+  background:none;
+  color:#403f53;
+}
+
+/* Prism tokens */
+.markdown-preview-view .token.comment,
+.markdown-preview-view .token.prolog,
+.markdown-preview-view .token.doctype,
+.markdown-preview-view .token.cdata{
+  color:#989fb1;
+  font-style:normal;
+}
+
+.markdown-preview-view .token.punctuation{ color:#403f53; }
+
+.markdown-preview-view .token.property,
+.markdown-preview-view .token.tag,
+.markdown-preview-view .token.boolean,
+.markdown-preview-view .token.number,
+.markdown-preview-view .token.constant,
+.markdown-preview-view .token.symbol,
+.markdown-preview-view .token.deleted{
+  color:#aa0982;
+}
+
+.markdown-preview-view .token.selector,
+.markdown-preview-view .token.attr-name,
+.markdown-preview-view .token.string,
+.markdown-preview-view .token.char,
+.markdown-preview-view .token.builtin,
+.markdown-preview-view .token.inserted{
+  color:#4876d6;
+}
+
+.markdown-preview-view .token.operator,
+.markdown-preview-view .token.entity,
+.markdown-preview-view .token.url,
+.language-css .token.string,
+.style .token.string{
+  color:#0c969b;
+}
+
+.markdown-preview-view .token.atrule,
+.markdown-preview-view .token.attr-value,
+.markdown-preview-view .token.keyword{
+  color:#994cc3;
+  font-style:normal;
+}
+
+.markdown-preview-view .token.function{
+  color:#ff5555;
+  font-style:normal;
+}
+
+.markdown-preview-view .token.class-name{ color:#111; }
+
+.markdown-preview-view .token.regex,
+.markdown-preview-view .token.important,
+.markdown-preview-view .token.variable{
+  color:#4876d6;
+}
+
+/* Links */
+.markdown-preview-view a{
+  color:#000;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.markdown-preview-view a:hover{
+  text-decoration-thickness:2px;
+}
+
+/* Tables */
+.markdown-preview-view table{
+  width:100%;
+  border-collapse:collapse;
+  margin:1.5em 0;
+  break-inside:avoid;
+}
+.markdown-preview-view th,
+.markdown-preview-view td{
+  border:1px solid var(--c-border);
+  padding:.6em .8em;
+}
+.markdown-preview-view th{
+  white-space:nowrap;
+  width:1%;
+}
+
+/* Images / SVG / Mermaid */
+img[alt*="center"]{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.markdown-preview-view svg{
+  break-inside:avoid;
+  max-width:100%;
+  height:auto;
+}
+
+.markdown-preview-view img[alt="sm"]{ width:max(300px,30%); height:auto; }
+.markdown-preview-view img[alt="md"]{ width:max(500px,50%); height:auto; }
+.markdown-preview-view img[alt="lg"]{ width:max(1080px,70%); height:auto; }
+
+.markdown-preview-view .mermaid svg{
+  overflow:visible;
+}
