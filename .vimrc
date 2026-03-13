@@ -5,23 +5,6 @@ syntax on
 set termguicolors
 set background=dark
 
-" --------------------
-" Plugins (vim-plug)
-" --------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'wincent/command-t'
-Plug 'rstacruz/sparkup', { 'rtp': 'vim/' }
-Plug 'terryma/vim-smooth-scroll'
-Plug 'ollykel/v-vim'
-Plug 'joshdick/onedark.vim'
-call plug#end()
-
 filetype plugin indent on
 
 " --------------------
