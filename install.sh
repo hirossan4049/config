@@ -12,6 +12,9 @@ if [`uname` = "Darwin"]; then
     defaults write com.apple.QuickTimePlayerX NSRecentDocumentsLimit 0
     defaults delete com.apple.QuickTimePlayerX.LSSharedFileList RecentDocuments
     defaults write com.apple.QuickTimePlayerX.LSSharedFileList RecentDocuments -dict-add MaxAmount 0
+    defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+    defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+    defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
     echo install homebrew
     bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     echo installed homebrew
